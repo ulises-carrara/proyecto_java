@@ -1,0 +1,13 @@
+.titulo{
+    font-size: 50px;
+}
+.botones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ .tablas{
+    /* display: flex; */
+    align-items: center;
+    justify-content: center; 
+} 

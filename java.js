@@ -35,215 +35,425 @@ const puzzle = [
 
 let total = 0
 let cantidad = 0
+const carrito =[]
 
-
+ function mostrar(arr) {
+     for (const el of arr) {
+        console.log("estos son los videojuegos: " + el.ID + "_" + el.nombre + " $ " + el.precio);
+     }
+ }
+ function cantDevideojueg() {
+     cantidad++
+     
+ }
+ function totalPagar(arr, n) {
+    total = total + arr[n].precio
+ }
+ function carro(arr, n1, n2) {
+    const carrito = arr.slice(n1, n2)
+    console.log(carrito);
+ }
 
 
 let numCliente = prompt("ingrese la categoria que esta buscando 1_accion 2_aventura 3_terror 4_pelea 5_puzzles s_salir")
 
-while (numCliente != "s") { 
-  
+while (numCliente!="s") {
+    
 
-    if (numCliente == 1) {
+  switch (numCliente) {
+      case "1":
+          mostrar(accion)
 
-        for (const categoria1 of accion) {
-            console.log("estos son los videojuegos: " + categoria1.ID + "_" + categoria1.nombre + "$" + categoria1.precio);
-        }
+          let seleccion=prompt("ingrese el numero del video juego deseado")
+          
+          if (seleccion==1) {
 
-        let seleccion1 = prompt("ingrese el numero del videojuego deseado")
+            cantDevideojueg()
 
-        if (seleccion1 == 1) {
-            cantidad++
-            total = total + accion[0].precio
+            totalPagar(accion,0)
 
             console.log("Grand Theft Auto V se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = accion.slice(0, 1);
+              
+            carro(accion, 0, 1)
 
+          }else if (seleccion==2){
+            cantDevideojueg()
 
-        } else if (seleccion1 == 2) {
-            cantidad++
-            total = total + accion[1].precio
+            totalPagar(accion,1)
 
             console.log("God of War se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = accion.slice(1, 2);
 
-        }else if (seleccion1 == 3) {
-            cantidad++
-            total = total + accion[2].precio
+            carro(accion, 1, 2)
+
+          }else if (seleccion==3){
+            cantDevideojueg()
+
+            totalPagar(accion,2)
 
             console.log("Far Cry se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = accion.slice(2, 3);
 
-        }else if (seleccion1 == 4) {
-            cantidad++
-            total = total + accion[3].precio
+            carro(accion, 2, 3)
+  
+          }else if (seleccion==4) {
+            cantDevideojueg()
+
+            totalPagar(accion,3)
 
             console.log("Resident Evil se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = accion.slice(3, 4);
 
-        }else if (seleccion1 ==5) {
-            cantidad++
-            total = total + accion[4].precio
+            carro(accion, 3, 4)
+  
+          }else if (seleccion==5) {
+            cantDevideojueg()
+
+            totalPagar(accion,4)
 
             console.log("Spider-Man se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = accion.slice(4, 5);
 
-        }
-
-
-    }else if (numCliente == 2) {
-
-        for (const categoria2 of aventura) {
-            console.log("estos son los videojuegos: " + categoria2.ID + "_" + categoria2.nombre + "$" + categoria2.precio);
-        }
-
-        let seleccion2 = prompt("ingrese el numero del videojuego deseado")
-
-        if (seleccion2 == 1) {
-
-            cantidad++
-            total = total + aventura[0].precio
-
-            console.log("Evil Dead: The Game se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = aventura.slice(0, 1);
-            
-        }else if (seleccion2 == 2) {
-
-            cantidad++
-            total = total + aventura[1].precio
-
-            console.log("Ghost of Tsushima se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = aventura.slice(1, 2);
-            
-        }
-        
-    }else if (numCliente == 3) {
-
-        for (const categoria3 of terror) {
-            console.log("estos son los videojuegos: " + categoria3.ID + "_" + categoria3.nombre + "$" + categoria3.precio);
-        }
-
-        let seleccion3 = prompt("ingrese el numero del videojuego deseado")
-
-
-        if (seleccion3 == 1) {
-            
-            cantidad++
-            total = total + terror[0].precio
-
-            console.log("Alan Wake se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = terror.slice(0, 1);
-           
-        }else if (seleccion3 == 2) {
-                        
-            cantidad++
-            total = total + terror[1].precio
-
-            console.log("Alien Isolation se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = terror.slice(1, 2);
-           
-        }else if (seleccion3 == 3) {
-                                    
-            cantidad++
-            total = total + terror[2].precio
-
-            console.log("Amnesia: A Machine for Pigs se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = terror.slice(2, 3);
-           
-        }else if (seleccion3 == 4) {
-                                                
-            cantidad++
-            total = total + terror[3].precio
-
-            console.log("Dead Space se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = terror.slice(3, 4);
-
-        }else if (seleccion3 == 5) {
-
-            cantidad++
-            total = total + terror[4].precio
-
-            console.log("outlast se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = terror.slice(4, 5);
-              
-        }
-        
-    }else if(numCliente == 4){
-
-        for (const categoria4 of pelea) {
-            console.log("estos son los videojuegos: " + categoria4.ID + "_" + categoria4.nombre + "$" + categoria4.precio);
-        }
-
-        let seleccion4 = prompt("ingrese el numero del videojuego deseado")
-
-        if (seleccion4 == 1) {
+            carro(accion, 4, 5)
+  
+          }
           
-            cantidad++
-            total = total + pelea[0].precio
 
-            console.log("Mortal Kombat 11 se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = terror.slice(0, 1); 
+          break;
 
-        }else if (seleccion4 == 2) {
-                    
-            cantidad++
-            total = total + pelea[1].precio
+        case"2":
+        mostrar(aventura)
 
-            console.log("WWE 2K22 se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = terror.slice(1, 2); 
-  
-        }else if (seleccion4 == 3) {
-                                
-            cantidad++
-            total = total + pelea[2].precio
+        let seleccion1=prompt("ingrese el numero del video juego deseado")
 
-            console.log("Super Smash Bros. Ultimate se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = terror.slice(2, 3); 
-  
-        }else if (seleccion4 == 4) {
-                                            
-            cantidad++
-            total = total + pelea[3].precio
+        if (seleccion1==1) {
 
-            console.log("Tekken 7 se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = terror.slice(3, 4); 
-  
-        }
+          cantDevideojueg()
 
+          totalPagar(aventura,0)
 
-    }else if (numCliente == 5) {
-
-        for (const categoria5 of puzzle) {
-            console.log("estos son los videojuegos: " + categoria5.ID + "_" + categoria5.nombre + "$" + categoria5.precio);
-        }
-        let seleccion5 = prompt("ingrese el numero del videojuego deseado")
-
-        if (seleccion5 == 1) {
-                      
-            cantidad++
-            total = total + puzzle[0].precio
-
-            console.log("Tetris Effect: Connected se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = puzzle.slice(0, 1); 
+          console.log("Evil Dead: The Game se añadio al carrito: " + cantidad + " total apagar: $" + total);
             
-        }else if (seleccion5 == 2) {
-                      
-            cantidad++
-            total = total + puzzle[1].precio
+          carro(aventura, 0, 1)
 
-            console.log("Gorogoa se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = puzzle.slice(1, 2); 
-            
-        }else if (seleccion5 == 3) {
-                                  
-            cantidad++
-            total = total + puzzle[2].precio
-
-            console.log("Unpacking se añadio al carrito: " + cantidad + " total apagar: $" + total);
-            const carrito = puzzle.slice(2, 3); 
+        }else if (seleccion1==2) {
           
+          cantDevideojueg()
+
+          totalPagar(aventura,1)
+
+          console.log("Ghost of Tsushima se añadio al carrito: " + cantidad + " total apagar: $" + total);
+            
+          carro(aventura, 1, 2)
+
         }
+
+          break;
+        case"3":
+
+        mostrar(terror)
+
+        let seleccion2=prompt("ingrese el numero del video juego deseado")
+
+        if (seleccion2==1) {
+
+          cantDevideojueg()
+
+          totalPagar(terror,0)
+
+          console.log("Alan Wake se añadio al carrito: " + cantidad + " total apagar: $" + total);
+            
+          carro(terror, 0, 1)
+
+        }else if (seleccion2==2) {
+
+          cantDevideojueg()
+
+          totalPagar(terror,1)
+
+          console.log("Alien Isolation se añadio al carrito: " + cantidad + " total apagar: $" + total);
+            
+          carro(terror, 1, 2)
+
+        }else if (seleccion2==3) {
+
+          cantDevideojueg()
+
+          totalPagar(terror,2)
+
+          console.log("Amnesia: A Machine for Pigs se añadio al carrito: " + cantidad + " total apagar: $" + total);
+            
+          carro(terror, 2, 3)
+
+        }else if (seleccion2==4) {
+
+          cantDevideojueg()
+
+          totalPagar(terror,3)
+
+          console.log("Dead Space se añadio al carrito: " + cantidad + " total apagar: $" + total);
+            
+          carro(terror, 3, 4)
+
+        }else if (seleccion2==5) {
+
+          cantDevideojueg()
+
+          totalPagar(terror,4)
+
+          console.log("outlast se añadio al carrito: " + cantidad + " total apagar: $" + total);
+            
+          carro(terror, 4, 5)
+
+        }
+
+
+          break;
+       case"4":
+
+       mostrar(pelea)
+
+       let seleccion3=prompt("ingrese el numero del video juego deseado")
+
+       if (seleccion3==1) {
+
+        cantDevideojueg()
+
+        totalPagar(pelea,0)
+
+        console.log("Mortal Kombat 11 se añadio al carrito: " + cantidad + " total apagar: $" + total);
+          
+        carro(pelea, 0, 1)
+
+      }else if (seleccion3==2) {
+
+        cantDevideojueg()
+
+        totalPagar(pelea,1)
+
+        console.log("WWE 2K22 se añadio al carrito: " + cantidad + " total apagar: $" + total);
+          
+        carro(pelea, 1, 2)
+
+      }else if (seleccion3==3) {
+
+        cantDevideojueg()
+
+        totalPagar(pelea,2)
+
+        console.log("Super Smash Bros. Ultimate se añadio al carrito: " + cantidad + " total apagar: $" + total);
+          
+        carro(pelea, 2, 3)
+
+      }else if (seleccion3==4) {
+
+        cantDevideojueg()
+
+        totalPagar(pelea,3)
+
+        console.log("Tekken 7 se añadio al carrito: " + cantidad + " total apagar: $" + total);
+          
+        carro(pelea, 3, 4)
+
+      }
+          break;
+        case"5":
+
+        mostrar(puzzle)
+
+        let seleccion4=prompt("ingrese el numero del video juego deseado")
+ 
+        if (seleccion4==1) {
+
+          cantDevideojueg()
+  
+          totalPagar(puzzle,0)
+  
+          console.log("Tetris Effect: Connected se añadio al carrito: " + cantidad + " total apagar: $" + total);
+            
+          carro(puzzle, 0, 1)
+  
+        }else if (seleccion4==2) {
+
+          cantDevideojueg()
+  
+          totalPagar(puzzle,1)
+  
+          console.log("Gorogoa se añadio al carrito: " + cantidad + " total apagar: $" + total);
+            
+          carro(puzzle, 1, 2)
+  
+        }else if (seleccion4==3) {
+
+          cantDevideojueg()
+  
+          totalPagar(puzzle,2)
+  
+          console.log("Unpacking se añadio al carrito: " + cantidad + " total apagar: $" + total);
+            
+          carro(puzzle, 2, 3)
+  
+        }
+
+
+          break;
+      default:
+          break;
         
-    }
-    prompt("ingrese la categoria que esta buscando 1_accion 2_aventura 3_terror 4_pelea 5_puzzles s_salir")
+  }    prompt ("ingrese la categoria que esta buscando 1_accion 2_aventura 3_terror 4_pelea 5_puzzles s_salir")
 }
+
+
+
+
+
+
+let encabezado = document.getElementById("principal");
+encabezado.style.background="green";
+
+let btnCarro =document.getElementById("btnCarrito");
+let btnDark = document.getElementById("btnDark")
+let body = document.getElementById("body")
+
+btnDark.addEventListener("click", activarDark)
+function activarDark(){
+  body.style.background="black";
+  btnDark.innerText="Light mode"
+}
+
+let seccionCarro=document.getElementById("seccionCarrito")
+btnCarro.addEventListener("click", mostrarCarrito)
+
+  let tabla=document.createElement("tablel")
+  tabla.className="table table-striped";
+  let tBody=document.createElement("tbody")
+
+function mostrarCarrito() { 
+
+  for (const juego of carrito) {
+    let fila=document.createElement("tr")
+    fila.innerHTML=`
+      <td>${juego.ID}</td>
+      <td>${juego.nombre}</td>
+      <td>$ ${juego.precio}</td> `
+    tBody.append(fila)
+  }
+}
+tabla.append(tBody);
+
+seccionCarro.append(tabla);
+
+let seccionjuego=document.getElementById("seccionJuegos")
+
+
+let btnAccion =document.getElementById("accion")
+btnAccion.addEventListener("click", mostrarAccion)
+
+
+let tbAccion =document.createElement("tablel")
+tbAccion.className="table table-striped";
+let accionBody =document.createElement("tbody")
+
+function mostrarAccion() {
+
+  for (const juego of accion) {
+    let fila=document.createElement("tr")
+    fila.innerHTML=`
+      <td>${juego.ID}</td>
+      <td>${juego.nombre}</td>
+      <td>$ ${juego.precio}</td> `
+      accionBody.append(fila)
+  }
+  
+}tbAccion.append(accionBody)
+
+seccionjuego.append(tbAccion)
+
+
+let btnAventura =document.getElementById("aventura")
+btnAventura.addEventListener("click", mostrarAventura)
+
+let tbAventura = document.createElement("table")
+let aventuraBody = document.createElement("tbody")
+tbAventura.className="table table-striped";
+
+function mostrarAventura() {
+
+  for (const juego of aventura) {
+    let fila=document.createElement("tr")
+    fila.innerHTML=`
+      <td>${juego.ID}</td>
+      <td>${juego.nombre}</td>
+      <td>$ ${juego.precio}</td> `
+      aventuraBody.append(fila)
+  }
+  
+}tbAventura.append(aventuraBody)
+
+seccionjuego.append(tbAventura)
+
+
+
+let btnTerror =document.getElementById("terror")
+btnTerror.addEventListener("click", mostrarTerro)
+
+let tbTerror = document.createElement("table")
+let terrorBody = document.createElement("tbody")
+tbTerror.className="table table-striped";
+
+function mostrarTerro() {
+
+  for (const juego of terror) {
+    let fila=document.createElement("tr")
+    fila.innerHTML=`
+      <td>${juego.ID}</td>
+      <td>${juego.nombre}</td>
+      <td>$ ${juego.precio}</td> `
+      terrorBody.append(fila)
+  }//420:D
+  
+}tbTerror.append(terrorBody)
+
+seccionjuego.append(tbTerror)
+
+let btnpelea =document.getElementById("pelea")
+btnpelea.addEventListener("click", mostrarPelea)
+
+let tbPelea = document.createElement("table")
+let peleaBody = document.createElement("tbody")
+tbPelea.className="table table-striped";
+
+function mostrarPelea() {
+
+  for (const juego of pelea) {
+    let fila=document.createElement("tr")
+    fila.innerHTML=`
+      <td>${juego.ID}</td>
+      <td>${juego.nombre}</td>
+      <td>$ ${juego.precio}</td> `
+      peleaBody.append(fila)
+  }
+} tbPelea.append(peleaBody)
+
+seccionjuego.append(tbPelea)
+  
+let btnpuzzle =document.getElementById("puzzle")
+btnpuzzle.addEventListener("click", mostrarPuzzle)
+
+let tbPuzzle = document.createElement("table")
+let puzzleBody = document.createElement("tbody")
+tbPuzzle.className="table table-striped";
+
+function mostrarPuzzle() {
+
+  for (const juego of puzzle) {
+
+    let fila=document.createElement("tr")
+    fila.innerHTML=`
+      <td>${juego.ID}</td>
+      <td>${juego.nombre}</td>
+      <td>$ ${juego.precio}</td> `
+      puzzleBody.append(fila)
+  }
+}tbPuzzle.append(puzzleBody)
+
+seccionjuego.append(tbPuzzle)
+
+
+
