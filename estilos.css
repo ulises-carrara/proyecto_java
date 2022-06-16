@@ -6,8 +6,19 @@
     align-items: center;
     justify-content: center;
 }
- .tablas{
-    /* display: flex; */
+.juegos{
+    display: flex;
     align-items: center;
     justify-content: center; 
-} 
+}
+.encavezado{
+    background-color:green;
+}
+.dark{
+    background-color: black;
+    color: white;
+}
+.light{
+    background-color: white;
+    color: black;
+}
