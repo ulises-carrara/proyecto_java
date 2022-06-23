@@ -42,7 +42,18 @@ if (localStorage.getItem("carrito")!=null) {
   
 }
 
-
+swal.fire({
+  html:`Por favor acepte nuestros <a href="#">terminos y condiciones</a>`,
+  confirmButtonText:`acepto`,
+  background:"grey",
+  icon:`info`,
+  grow:`row`,
+  backdrop:true,
+  toast:true,
+  position:`top-start`,
+  allowOutsideClick:false,
+  showCancelButton:false,
+})
 
 
 let listasAccion = document.getElementById("listaAccion")
@@ -82,7 +93,24 @@ function mostrarJuegos (arr, list) {
 function agregarAlCarrito(juegoCarro) {
   carrito.push(juegoCarro);
   console.log(carrito);
-  alert(juegoCarro.nombre+" se añadio al carrito total: "+carrito.length)
+ 
+  Swal.fire({
+    title:juegoCarro.nombre,
+    text:`Se añadio al carrito  $${juegoCarro.precio}`,
+    icon:"success",
+    background:"grey",
+    backdrop:false,
+    timer:3000,
+    timerProgressBar:true,
+    toast:true,
+    position:"top-end",
+    showConfirmButton:false,
+    
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+})
 
   document.getElementById("tablaBody").innerHTML+=`
   <tr>
@@ -96,24 +124,7 @@ function agregarAlCarrito(juegoCarro) {
 }
 
 
-/* let modo ="light"
-let principal = document.getElementById("principal")
-let boton = document.getElementById("modo")
-document.body.className=modo
-localStorage.setItem("modo",modo)
 
-boton.onclick=()=>{
-  if (modo=="light") {
-      document.body.className="dark"
-      modo="dark"
-      boton.innerText="Light Mode"
-  }else{
-      document.body.className="light"
-      modo="light"
-      boton.innerText="Dark Mode"
-  }
-  localStorage.setItem("modo",modo)
-} */
 
 
 

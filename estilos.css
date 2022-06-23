@@ -14,11 +14,9 @@
 .encavezado{
     background-color:green;
 }
-.dark{
-    background-color: black;
-    color: white;
-}
-.light{
-    background-color: white;
-    color: black;
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
 }
