@@ -1,47 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="estilos.css">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>ulises_java</title>
-</head>
-<body id="body" class="container-fluid">
-    
-    <section class="encavezado" id="principal">
-        <h1 class="titulo text-center">NEXUS</h1>
 
-        <div class="botones">
-             <a id="modo" class="btn btn-outline-secondary" href="">Dark Mode</a> <!--boton de dark-->
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/00e4c2fc8c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <title>NEXUS</title>
+</head>
+
+<body id="body" class="container-fluid">
+
+  <section class="encavezado" id="principal">
+    <h1 class="titulo text-center">NEXUS</h1>
+
+    <div class="botones">
+      <button class="switch active" id="switch">
+        <!--boton de dark-->
+        <span><i class="fa-solid fa-sun"></i></span>
+        <span><i class="fa-solid fa-moon"></i></span>
+      </button>
+    </div>
   </section>
 
-    
-  <h2 class="text-center">peliculas mas populares</h2>
+
+  <h2 class="text-center">Accion</h2>
+
   <div class="container">
-    
-    <ul id="peliculas" class="row list-group list-group-horizontal">
-   >
+
+    <ul id="listaAccion" class="row list-group list-group-horizontal">
+      <!--aqui van los productos-->
     </ul>
   </div>
 
-  <h2 class="text-center">Proximos estrenos</h2>
+  <h2 class="text-center">Aventura</h2>
   <div class="container">
-    
-    <ul id="peliculas2" class="row list-group list-group-horizontal">
-   >
+    <ul id="listaAventura" class="row list-group list-group-horizontal">
+
+    </ul>
+  </div>
+
+  <h2 class="text-center">Terror</h2>
+  <div class="container">
+    <ul id="listaTerror" class="row list-group list-group-horizontal">
+
+    </ul>
+  </div>
+
+  <h2 class="text-center">Pelea</h2>
+  <div class="container">
+    <ul id="listaPelea" class="row list-group list-group-horizontal">
+
+    </ul>
+  </div>
+
+  <h2 class="text-center">Puzzle</h2>
+  <div class="container">
+    <ul id="listaPuzzle" class="row list-group list-group-horizontal">
+
     </ul>
   </div>
 
 
 
+  <div>
+    <h2>Carrito</h2> <input type="submit"  id="finCompra" value="Comprar">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody id="Carrito">
+        <!--carrito-->
+      </tbody>
+      <p id="total"></p>
+    </table>
+   
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="java.js"></script>
+  <form  id="contenedorFormulario" action="">
+
+  </form>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="java.js"></script>
 
 </body>
+
 </html>

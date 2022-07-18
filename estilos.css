@@ -20,3 +20,88 @@
     justify-content: center; 
 
 }
+
+
+
+/*dark mode*/
+
+.switch{
+    background-color:  rgb(2, 57, 94);
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.switch span{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+
+}
+
+.switch::after{
+    background: white ;
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+    top: 0;
+    left: 0;
+    right: unset;
+    position: absolute;
+    border-radius: 50%;
+    transition: all .5s ease;
+    box-shadow: 0 0 1.5px 1.5px rgb(0, 0, 0);
+    content: "";
+}
+
+.switch.active{
+    background: rgb(219, 180, 5);
+}
+
+.switch.active::after{
+    left: unset;
+    right: 0;
+}
+
+.dark{
+    background: rgb(9, 37, 56);
+}
+.dark h1{
+    color: white;
+}
+.dark h2{
+    color: orangered;
+}
+.dark h3{
+    color: orangered;
+}
+.dark label{
+    color: orangered;   
+}
+.dark li{
+    background: rgb(17, 94, 87);
+}
+.dark p{
+    color: rgb(133, 38, 4);
+}
+
+.dark .encavezado{
+    background-color: rgb(133, 38, 4);
+}
+
+.dark tr{
+    color: white;
+}
+
+
+.formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
